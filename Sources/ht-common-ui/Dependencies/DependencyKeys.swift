@@ -15,6 +15,10 @@ public enum htDIKeys: Sendable {
     }
     
     public enum GNBKey : DependencyKey {
-        public static let liveValue: GNBStyle = GNBStyle.default
+        public static let liveValue: ToolbarStyle = ToolbarStyle.defaultGNB
+    }
+    
+    public enum ToolbarStyleKey: DependencyKey {
+        public static let liveValue: ToolbarStyle = ToolbarStyle.defaultToolbar
     }
 }

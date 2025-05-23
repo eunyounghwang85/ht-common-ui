@@ -8,22 +8,39 @@
 import SwiftUI
 
 
-public struct GNBStyle: Sendable, Equatable {
+import Dependencies
+
+
+public struct ToolbarStyle: Sendable, Equatable {
     public let font: Font
     public let color: Color
 }
 
 
-extension GNBStyle {
-    public static var `default`: GNBStyle {
+extension ToolbarStyle {
+    public static var `defaultToolbar`: ToolbarStyle {
         get {
             MainActor.assumeIsolated {
-                GNBStyle(
+                ToolbarStyle(
                     font: .notoSansBold(18),
                     color: Theme.shared.navBarTint
                 )
             }
         }
     }
+    
+    public static var `defaultGNB`: ToolbarStyle {
+        get {
+            MainActor.assumeIsolated {
+                ToolbarStyle(
+                    font: .notoSansBold(18),
+                    color: Theme.shared.navBarTint
+                )
+            }
+        }
+    }
+    
+    
 }
+
 

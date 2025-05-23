@@ -13,8 +13,13 @@ public extension DependencyValues {
         set { self[htDIKeys.ThemeKey.self] = newValue }
     }
     
-    var GNB: GNBStyle {
+    var GNBStyle: ToolbarStyle {
         get { self[htDIKeys.GNBKey.self] }
         set { self[htDIKeys.GNBKey.self] = newValue }
+    }
+    
+    var toolbarStyle: ToolbarStyle {
+        get { self[htDIKeys.ToolbarStyleKey.self] }
+        set { self[htDIKeys.ToolbarStyleKey.self] = newValue }
     }
 }
