@@ -14,7 +14,7 @@ import ViewInspector  // 뷰 검사 도구 (옵션)
 
 
 final class ContentViewTests: XCTestCase {
-    func testContentViewRenders() throws {
+    @MainActor func testContentViewRenders() throws {
         let view = ContentView()
         // ViewInspector로 뷰 계층 검사 가능
         let text = try view.inspect().find(text: "Hello, World!")

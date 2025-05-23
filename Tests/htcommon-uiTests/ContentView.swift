@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Dependencies
+import ht_common_ui
 
 struct ContentView: View {
     @Dependency(\.theme) var theme  // 동기적 불변 테마

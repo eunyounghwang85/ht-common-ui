@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "ht-common-ui",
     platforms: [
-           .iOS(.v13),
+           .iOS(.v17),
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
@@ -23,7 +23,7 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "ht-common-ui",
-            dependencies: [],
+            dependencies: [.product(name: "Dependencies", package: "swift-dependencies")],
             resources: [
                 .process("Resources")  // 리소스 처리
             ]
@@ -32,6 +32,7 @@ let package = Package(
                     name: "htcommon-uiTests",
                     dependencies: [
                         "ht-common-ui",
+                        .product(name: "Dependencies", package: "swift-dependencies"),
                         .product(name: "ViewInspector", package: "ViewInspector")
                                   ]
         ),

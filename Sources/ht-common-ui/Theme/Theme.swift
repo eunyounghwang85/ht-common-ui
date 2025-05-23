@@ -9,16 +9,40 @@
 import Foundation
 import SwiftUI
 
-public struct Theme: Sendable, Equatable {
-    public let fontName: String
-    public let fontSize: CGFloat
-    public let tintColor: Color
-    public let backgroundColor: Color
+// MARK: - @MainActor 싱글톤 ThemeManager (mutable)
+@MainActor
+public final class Theme {
     
-    public static let `default` = Theme(
-        fontName: "Pretendard-Regular",
-        fontSize: 16,
-        tintColor: .blue,
-        backgroundColor: .white
-    )
+    
+    public static let shared = Theme()
+    
+    private init() {
+        
+    }
+    
+    public var tintPrimary: Color = Color("basicFF")
+    public var colorAccent: Color = Color("primary500")
+
+    public var bgPrimary: Color = Color("basic00")
+    public var navBarTint: Color = Color("basicFF")
+    public var tabbarBack: Color = Color("tabbar_back")
+    public var tabBarAccent: Color = Color("primary500")
+    public var tabBarTextAccent: Color = Color("basicFF")
+    public var tabBarNormal: Color =  Color("neutralgray500")
+
+    public var textPrimary: Color =  Color("basicFF")
+    public var textSecondary: Color = Color("neutralgray400")
+
+    public var cta1btnDefaultFill: Color =  Color("primary500")
+    public var cta1btnDisableFill: Color = Color("neutralgray500")
+    public var cta1btnSelectedFill: Color = Color("primary700")
+    public var cta1btnDisableText: Color = Color("neutralgray600")
+    
+    
+    //Font관련
+    public var bold: Font = .notoSansBold()
+    public var regular: Font = .notoSansRegular()
+    
+    
 }
+
